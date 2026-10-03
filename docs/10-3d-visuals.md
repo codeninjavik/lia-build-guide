@@ -1,5 +1,9 @@
 # Step 10 — 3D visuals: orb, splash, edge glow
 
+> **Is step ka copy-paste prompt:** [PROMPT 10: 3D Orb, 3D Splash & Edge Glow](../prompts/10-3d-visuals.md)  
+> **Ye banayega:** Lia ka asli 3D golak (GPU shader se), jo phone tilt par roshni badalta hai aur awaaz par lehrata hai.
+
+
 ## Feature
 Lia's presence on screen: a **real 3D sphere** shaded per pixel on the GPU, seven Canvas orb styles as fallback and personality, a 3D splash intro, and a glowing screen edge whenever Lia is active.
 
@@ -36,6 +40,8 @@ Android 13+ only (`RuntimeShader`); older devices get the Canvas orb unchanged.
 A slim (≈ 26 dp) coloured border hugging the screen edge: violet when listening, pink when speaking, red on error. In-app it is hosted in a `Dialog` window above every screen, so the live session is visible even when you navigate. The `direct` flavor also shows it system-wide through a `WindowManager` overlay (needs "draw over other apps"); the `play` flavor ships a no-op version because `SYSTEM_ALERT_WINDOW` is not declared there.
 
 ## Build prompt (copy-paste)
+
+_Short version below. The ready-to-copy file with a check list is in [`prompts/`](../prompts/10-3d-visuals.md)._
 
 ```text
 Build Lia's 3D presence in com.Lia.assistant.ui.fx, ui.components and ui.screens.splash.

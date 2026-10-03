@@ -1,5 +1,9 @@
 # Step 07 — Phone actions (tools)
 
+> **Is step ka copy-paste prompt:** [PROMPT 07: Phone Actions: Open Apps, Call, Message, Control Screen](../prompts/07-phone-actions.md)  
+> **Ye banayega:** 'YouTube kholo', 'Mummy ko call karo', 'Rahul ko WhatsApp karo' jaise kaam.
+
+
 ## Feature
 Lia can *do* things: open an app, call a contact, prepare a message, and (in the `direct` build) read the screen, tap, type and scroll. Gemini decides when to call a tool; the app executes it and reports a result the model can speak about.
 
@@ -39,6 +43,8 @@ flowchart TD
 - **Gemini is only told about the tools that exist in the flavor** (per-flavor `LiaToolCatalog` and `LiaCapabilityPrompts`), so `play` can never call a screen tool.
 
 ## Build prompt (copy-paste)
+
+_Short version below. The ready-to-copy file with a check list is in [`prompts/`](../prompts/07-phone-actions.md)._
 
 ```text
 Implement phone actions for Lia in com.Lia.assistant.action and .voice, with the flavor split from

@@ -1,5 +1,9 @@
 # Step 15 — Testing, release & Play Store
 
+> **Is step ka copy-paste prompt:** [PROMPT 15: Tests & Release](../prompts/15-testing-and-release.md)  
+> **Ye banayega:** Saare pure logic ke unit tests.
+
+
 ## Feature
 A repeatable way to prove the app works and to ship both builds.
 
@@ -44,6 +48,8 @@ Run: `./gradlew testDirectDebugUnitTest testPlayDebugUnitTest`
 - Never commit: keystores, `keystore.properties`, backend config files, API keys.
 
 ## Build prompt (copy-paste)
+
+_Short version below. The ready-to-copy file with a check list is in [`prompts/`](../prompts/15-testing-and-release.md)._
 
 ```text
 Add the test suites and release setup for Lia AI.

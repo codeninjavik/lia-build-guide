@@ -1,5 +1,9 @@
 # Step 11 — Screens & navigation
 
+> **Is step ka copy-paste prompt:** [PROMPT 11: All Screens & Navigation](../prompts/11-screens-and-navigation.md)  
+> **Ye banayega:** Home, Voice, Chat, History, Settings, Personality, Orb Style, Permissions, Profile, Privacy, About, Debug.
+
+
 ## Feature
 The whole app shell: a single `NavHost`, a floating bottom bar with a **Talk orb** in the middle, and every screen.
 
@@ -54,6 +58,8 @@ flowchart TD
 All visible "Lia" text uses the user's saved assistant name, falling back to `AssistantBrand.NAME`.
 
 ## Build prompt (copy-paste)
+
+_Short version below. The ready-to-copy file with a check list is in [`prompts/`](../prompts/11-screens-and-navigation.md)._
 
 ```text
 Build the app shell and screens for Lia AI (com.Lia.assistant.MainActivity and ui/screens/*). Use the

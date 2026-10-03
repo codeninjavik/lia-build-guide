@@ -1,36 +1,19 @@
-# Step 03 — Personalities, language & prompt builder
+# PROMPT 03: 10 Personalities & the Hindi / Hinglish / English Brain
 
-> **Is step ka copy-paste prompt:** [PROMPT 03: 10 Personalities & the Hindi / Hinglish / English Brain](../prompts/03-personalities-and-prompts.md)  
-> **Ye banayega:** 10 personalities (Normal, Friendly, Funny, Teacher, Developer, Nautanki aur aur).
+## Ye prompt kya banayega
 
+- 10 personalities (Normal, Friendly, Funny, Teacher, Developer, Nautanki aur aur).
+- Hindi, Hinglish aur English khud pehchanna aur usi me jawab dena.
+- Reconnect ke baad baat wahin se jaari rakhne ke liye chhoti memory.
 
-## Feature
-Ten selectable personalities, automatic Hindi / Hinglish / English matching, and a system prompt that is **built fresh** from the user's choices. Also a small in-memory conversation memory so a reconnect can continue naturally.
+**Pehle ye prompts ho chuke hone chahiye:** [02](02-state-and-storage.md)
 
-## How it works (logic)
+**Kaise use karein**
+1. Neeche wale code box ke **copy button** se poora prompt copy karo.
+2. Apne AI coding tool me paste karo (Claude Code, Cursor, Copilot Chat, ChatGPT ya koi bhi).
+3. AI jab bole ki ho gaya, "Check karo" list se verify karo. Sab theek ho to agla prompt.
 
-```mermaid
-flowchart TD
-    PB[PersonalityPromptBuilder.build] --> S1[1. Base: who you are, short spoken replies]
-    PB --> S2[2. Tools: from the flavor's LiaCapabilityPrompts]
-    PB --> S3[3. Personality instruction]
-    PB --> S4[4. Language policy]
-    PB --> S5[5. Safety rules]
-    PB --> S6{recap present?}
-    S6 -- yes --> R[6. 'Continuing conversation, do not greet again' + recap]
-    LD[LanguageDetector] -- last user turn --> S4
-    CM[ConversationMemory<br/>last 12 turns, max 1600 chars] -- recap --> R
-```
-
-- **Personalities** carry an *instruction for the model*, never a canned reply: Normal, Friendly, Professional, Funny, Companion, GF Mode, Teacher, Developer, Hungry, Nautanki. Companion and GF Mode have explicit safety limits (never claim to be human, no explicit content, respect a topic change).
-- **LanguageDetector**: any Devanagari character → Hindi. Otherwise it counts Hinglish marker words (`hai`, `kya`, `nahi`, `yaar`, `karo` …). Four words or fewer: one hit is enough. Longer: two hits or 15 % of words. Else English. Blank → unknown.
-- **Language modes**: AUTO follows the user turn by turn, and gets a hint ("Their last message was in Hinglish"). HINDI / HINGLISH / ENGLISH are fixed.
-- **ConversationMemory** keeps the last 12 turns in memory only, cleared when the session stops. Used only to build the recap after a reconnect or a personality swap.
-- Tool instructions come from **per-flavor** `LiaCapabilityPrompts`, so the `play` model is never told it can read the screen.
-
-## Build prompt (copy-paste)
-
-_Short version below. The ready-to-copy file with a check list is in [`prompts/`](../prompts/03-personalities-and-prompts.md)._
+## Copy this prompt
 
 ```text
 Implement the personality system for "Lia AI" in package com.Lia.assistant.voice and .data.
@@ -61,7 +44,12 @@ Implement the personality system for "Lia AI" in package com.Lia.assistant.voice
    recap; detector cases (Devanagari, "kya haal hai yaar", "what's the weather", blank).
 ```
 
-## Done when
+## Check karo ki ban gaya
+
 - [ ] Switching personality mid-conversation changes tone without a new greeting.
 - [ ] "Kya haal hai yaar" gets a Hinglish reply; an English question gets English.
 - [ ] Prompt-builder tests pass for all 40 combinations.
+
+Logic, diagrams aur samjhane wali detail: [`docs/03-personalities-and-prompts.md`](../docs/03-personalities-and-prompts.md)
+
+**Agla:** [PROMPT 04: Gemini Live Real-Time Voice Client](04-gemini-live-client.md)

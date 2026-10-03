@@ -1,5 +1,9 @@
 # Step 04 — Gemini Live client
 
+> **Is step ka copy-paste prompt:** [PROMPT 04: Gemini Live Real-Time Voice Client](../prompts/04-gemini-live-client.md)  
+> **Ye banayega:** Gemini Live se real-time, dono taraf bolne wali (full-duplex) voice connection.
+
+
 ## Feature
 The real-time, full-duplex voice connection. Audio goes up, audio and text transcripts come down, and the model can **call tools** in the middle of a sentence.
 
@@ -39,6 +43,8 @@ Rules that took real debugging and must be kept:
 Close code 1000 → `onClosed`; anything else → `onError`, which triggers the reconnect logic in step 06.
 
 ## Build prompt (copy-paste)
+
+_Short version below. The ready-to-copy file with a check list is in [`prompts/`](../prompts/04-gemini-live-client.md)._
 
 ```text
 Implement GeminiLiveClient (package com.Lia.assistant.voice) with OkHttp WebSocket and org.json.

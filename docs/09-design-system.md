@@ -1,5 +1,9 @@
 # Step 09 — Design system & theme
 
+> **Is step ka copy-paste prompt:** [PROMPT 09: Design System & Theme](../prompts/09-design-system.md)  
+> **Ye banayega:** Poore app ka ek jaisa look: gehri indigo raat + ek marigold accent.
+
+
 ## Feature
 One token-based design system so every screen looks like the same product, in dark and light, with a "pearl of light in the night" identity instead of a generic dark UI.
 
@@ -30,6 +34,8 @@ flowchart LR
 `NovaGlassCard`, `NovaButton` (primary / secondary / text with a press-scale), `NovaTextField` (password mode), `NovaTopBar`, `NovaSectionHeader`, `NovaSettingsRow`, `NovaMessageBubble`, `NovaOptionPickerDialog`, `NovaSliderDialog`, `NovaEmptyState`, `NovaOrb`, `NovaVoiceVisualizer`, `NovaTypingDots`, floating `LiaBottomNavigation`.
 
 ## Build prompt (copy-paste)
+
+_Short version below. The ready-to-copy file with a check list is in [`prompts/`](../prompts/09-design-system.md)._
 
 ```text
 Build the design system for Lia AI in com.Lia.assistant.ui.theme and .components. Use Compose and

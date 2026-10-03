@@ -1,5 +1,9 @@
 # Step 12 — Visual social-media & WhatsApp agent (`direct` flavor only)
 
+> **Is step ka copy-paste prompt:** [PROMPT 12: Instagram / Facebook / WhatsApp Visual Agent (direct only)](../prompts/12-visual-agent.md)  
+> **Ye banayega:** Lia app ki screen dekhkar khud buttons dabati hai: post, reel, story, WhatsApp message.
+
+
 ## Feature
 "Lia, is photo ko Instagram pe post kar do" or "Rahul ko WhatsApp pe bolo main aa raha hoon". Lia **operates the real app UI** with the Accessibility API: she observes the screen, finds the right button, taps it, verifies the result, and **asks before anything irreversible**.
 
@@ -72,6 +76,8 @@ stateDiagram-v2
 | WhatsApp | `read_unread` (notifications only, never opens the app), `send_message` (by phone number, like `message_contact`), `read_chat`, `search_chat`, `mute_chat`, `unmute_chat`, `mark_read` | `SENT`, `SUBMITTED_UNVERIFIED`, `DONE`, `FAILED`, `CANCELLED`, `REJECTED` |
 
 ## Build prompt (copy-paste)
+
+_Short version below. The ready-to-copy file with a check list is in [`prompts/`](../prompts/12-visual-agent.md)._
 
 ```text
 In src/direct only, implement a visual UI agent for Android using the AccessibilityService from step 07.

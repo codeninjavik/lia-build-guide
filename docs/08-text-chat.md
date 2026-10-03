@@ -1,5 +1,9 @@
 # Step 08 — Text chat
 
+> **Is step ka copy-paste prompt:** [PROMPT 08: Text Chat with Gemini](../prompts/08-text-chat.md)  
+> **Ye banayega:** Type karke baat karne wala chat screen, voice wali hi personality ke saath.
+
+
 ## Feature
 A typed conversation with the *same* Lia (same personality, language and name), using plain Gemini `generateContent` — no microphone needed. Typing "ek cafe ki website bana do" opens the Website Forge instead of replying in text (step 14).
 
@@ -23,6 +27,8 @@ flowchart TD
 - The typed command detector (`ForgeIntent`) needs both a subject (website, web page, landing page, Hindi equivalents) and a build verb (build, create, make, banao, bana do …), and ignores questions like "website kya hota hai?".
 
 ## Build prompt (copy-paste)
+
+_Short version below. The ready-to-copy file with a check list is in [`prompts/`](../prompts/08-text-chat.md)._
 
 ```text
 Implement text chat (common to both flavors) in com.Lia.assistant.voice and ui/screens/chat.

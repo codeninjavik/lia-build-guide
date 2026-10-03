@@ -1,5 +1,9 @@
 # Step 13 — Access-key licensing (`direct` flavor only)
 
+> **Is step ka copy-paste prompt:** [PROMPT 13: Access-Key Licensing (direct only)](../prompts/13-access-key-licensing.md)  
+> **Ye banayega:** Bina valid access key ke direct app voice aur tools nahi chalata.
+
+
 ## Feature
 The website / sideloaded build only works with an **active access key**. Without one the voice session does not start and no phone-control tool runs. The Google Play build has no key gate.
 
@@ -29,6 +33,8 @@ flowchart TD
 - **Enforcement points**: `VoiceSessionManager.start` and `ActionExecutor.execute` both check the manager, and `MainActivity` re-checks on `ON_RESUME` and stops a running voice session if the key was blocked meanwhile.
 
 ## Build prompt (copy-paste)
+
+_Short version below. The ready-to-copy file with a check list is in [`prompts/`](../prompts/13-access-key-licensing.md)._
 
 ```text
 In src/direct, implement an access-key gate. Package com.Lia.assistant.license. Do not include any

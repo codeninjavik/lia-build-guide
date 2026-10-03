@@ -1,5 +1,9 @@
 # Step 06 — Voice session & foreground service
 
+> **Is step ka copy-paste prompt:** [PROMPT 06: Voice Session, Auto-Reconnect & Background Service](../prompts/06-voice-session.md)  
+> **Ye banayega:** Ek lambi chalne wali conversation jo screen chhodne par bhi nahi rukti.
+
+
 ## Feature
 One long-lived conversation object that **survives leaving the screen**, reconnects by itself, and shows live state (listening, speaking, thinking) to the whole UI.
 
@@ -32,6 +36,8 @@ Design decisions:
 - The installed-apps cache is **prewarmed** at session start; a cold scan can take 6+ seconds on real devices.
 
 ## Build prompt (copy-paste)
+
+_Short version below. The ready-to-copy file with a check list is in [`prompts/`](../prompts/06-voice-session.md)._
 
 ```text
 Implement the voice session layer in com.Lia.assistant.voice.

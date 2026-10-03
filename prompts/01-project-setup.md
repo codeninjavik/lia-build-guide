@@ -1,29 +1,19 @@
-# Step 01 — Project setup & flavors
+# PROMPT 01: Project Setup & Two Build Flavors
 
-> **Is step ka copy-paste prompt:** [PROMPT 01: Project Setup & Two Build Flavors](../prompts/01-project-setup.md)  
-> **Ye banayega:** Ek khaali Android project (Kotlin + Jetpack Compose) jo build hota hai.
+## Ye prompt kya banayega
 
+- Ek khaali Android project (Kotlin + Jetpack Compose) jo build hota hai.
+- Do versions ek hi code se: **direct** (poori power) aur **play** (Google Play ke rules ke hisaab se).
+- Manifest, Gradle, release signing ka setup (secrets git me nahi jate).
 
-## Feature
-A Compose-only Android project with **two product flavors** that compile different feature sets from one codebase.
+**Pehle kuch zaruri nahi.** Ye pehla step hai.
 
-## How it works (logic)
+**Kaise use karein**
+1. Neeche wale code box ke **copy button** se poora prompt copy karo.
+2. Apne AI coding tool me paste karo (Claude Code, Cursor, Copilot Chat, ChatGPT ya koi bhi).
+3. AI jab bole ki ho gaya, "Check karo" list se verify karo. Sab theek ho to agla prompt.
 
-```mermaid
-flowchart LR
-    main["src/main<br/>voice, chat, Forge, UI, tools shared by both"] --> direct
-    main --> play
-    direct["src/direct<br/>ActionExecutor with screen tools,<br/>social/WhatsApp agents,<br/>AccessibilityService, licensing,<br/>system-wide edge glow"] --> APK1[direct APK<br/>website / sideload]
-    play["src/play<br/>ActionExecutor without screen tools,<br/>no-op stubs of the same objects"] --> APK2[play AAB<br/>Google Play]
-```
-
-Key idea: the `play` flavor does not hide the accessibility code behind a flag — the classes **do not exist** in its source set. Common code calls objects (`ActionExecutor`, `LiaToolCatalog`, `LiaCapabilityPrompts`, `AccessKeyManager`, `OverlayEdgeGlowController`, flavor routes) that each flavor implements differently. `play` gets harmless stubs.
-
-Gemini is also only *told about* tools that exist in the flavor, so it cannot call a missing tool.
-
-## Build prompt (copy-paste)
-
-_Short version below. The ready-to-copy file with a check list is in [`prompts/`](../prompts/01-project-setup.md)._
+## Copy this prompt
 
 ```text
 You are a senior Android engineer. Create an Android app "Lia AI" (applicationId and namespace
@@ -61,7 +51,12 @@ a Hello-World MainActivity that builds for both flavors. Then print the commands
 assembleDirectDebug and assemblePlayDebug.
 ```
 
-## Done when
+## Check karo ki ban gaya
+
 - [ ] `./gradlew assembleDirectDebug assemblePlayDebug` both succeed.
 - [ ] The `play` APK's manifest has no AccessibilityService and no `QUERY_ALL_PACKAGES`.
 - [ ] `keystore.properties` and `*.jks` are in `.gitignore`.
+
+Logic, diagrams aur samjhane wali detail: [`docs/01-project-setup.md`](../docs/01-project-setup.md)
+
+**Agla:** [PROMPT 02: Settings, State & API Key Storage](02-state-and-storage.md)

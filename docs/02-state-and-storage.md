@@ -1,5 +1,9 @@
 # Step 02 — State, branding & settings storage
 
+> **Is step ka copy-paste prompt:** [PROMPT 02: Settings, State & API Key Storage](../prompts/02-state-and-storage.md)  
+> **Ye banayega:** Gemini API key paste karne aur phone me save karne ka system.
+
+
 ## Feature
 Everything the user can change (assistant name, personality, language, voice, theme, API key) is saved on the phone and applied **immediately**, even in the middle of a live voice session.
 
@@ -21,6 +25,8 @@ flowchart LR
 - **NovaAppState** — one plain class created at the navigation root with `mutableStateOf` fields, so every screen reads the same values. Each field has an `applyX()` method that persists it.
 
 ## Build prompt (copy-paste)
+
+_Short version below. The ready-to-copy file with a check list is in [`prompts/`](../prompts/02-state-and-storage.md)._
 
 ```text
 Add the persistence layer for "Lia AI" (package com.Lia.assistant.data).

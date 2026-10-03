@@ -1,5 +1,9 @@
 # Step 14 — Website Forge (live 3D build scene)
 
+> **Is step ka copy-paste prompt:** [PROMPT 14: Website Forge: Live 3D Website Builder](../prompts/14-website-forge.md)  
+> **Ye banayega:** 'Lia, ek cafe ki website banao' bolne par 3D Forge scene khulta hai.
+
+
 ## Feature
 Say **"Lia, ek cafe ki animated website banao"** (or type it). A 3D "Forge" scene opens at once and shows the website being written, driven by the *real* stream from Gemini. When it finishes, the scene punches through into the finished, scrollable, animated website, with share / save / edit tools.
 
@@ -132,6 +136,8 @@ Ported from the original builder (single HTML file, Tailwind via CDN, GSAP + Scr
 After generation the app injects a tiny script: anything with real content that has sat at opacity 0 inside the viewport for 1.4 s is faded in. Overlays that are meant to be invisible (fixed, `pointer-events: none`, `aria-hidden`, canvases) are left alone. It is idempotent (marker attribute).
 
 ## Build prompt (copy-paste)
+
+_Short version below. The ready-to-copy file with a check list is in [`prompts/`](../prompts/14-website-forge.md)._
 
 ```text
 Implement the "Website Forge" feature (common to both flavors) in packages com.Lia.assistant.forge and

@@ -1,5 +1,9 @@
 # Step 05 — Audio I/O & echo guard
 
+> **Is step ka copy-paste prompt:** [PROMPT 05: Microphone, Speaker & Echo Guard](../prompts/05-audio-and-echo-guard.md)  
+> **Ye banayega:** Saaf mic capture aur low-latency speaker playback.
+
+
 ## Feature
 Clean microphone capture, low-latency speaker playback, and **no self-hearing**: Lia never mistakes her own voice from the loudspeaker for the user.
 
@@ -22,6 +26,8 @@ stateDiagram-v2
 - **EchoGuard** is a singleton with a playback counter; the mic stays muted while it is above 0 and for 450 ms after. A 60 s watchdog force-unmutes in case a "stopped" signal is ever missed.
 
 ## Build prompt (copy-paste)
+
+_Short version below. The ready-to-copy file with a check list is in [`prompts/`](../prompts/05-audio-and-echo-guard.md)._
 
 ```text
 Implement LiveAudioIO and EchoGuard in com.Lia.assistant.voice.
